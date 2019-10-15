@@ -17,8 +17,9 @@ public class EchoServer {
 
 				int b;
 				while ((b = input.read()) != -1) {
-					output.write((byte)b);
+					output.write(b);
 				}
+                                output.flush();
 				
 				output.close();
 				input.close();
