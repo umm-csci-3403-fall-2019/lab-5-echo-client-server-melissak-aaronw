@@ -7,7 +7,7 @@ public class EchoClient {
 
 	public static void main(String[] args) throws IOException {
 		String server;
-		if (args.length ==0) {
+		if (args.length == 0) {
 			server = "127.0.0.1";
 		} else {
 			server = args[0];
@@ -20,12 +20,14 @@ public class EchoClient {
 
 			int b;
 			int response;
+			
 			while ((b = System.in.read()) != -1) {
-				output.write((byte)b);
+				output.write(b);
 				output.flush();
 				response = input.read();
-				System.out.println((byte)response);
+				System.out.write(response);
 			}
+                        System.out.flush();
 	
 			output.close();
 			input.close();
